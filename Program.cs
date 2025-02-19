@@ -47,11 +47,20 @@ namespace Making_a_Die_Class_5._5
                 {
                     Console.WriteLine("The dice are sequencetial.");
                 }
-                else
+                //else tell which one is bigger
+                else if (die1.Roll > die2.Roll)
                 {
-                    Console.WriteLine("The dice are not special. L bozo");
-                    Console.WriteLine("You can press space to roll again if you want.");
+                    Console.WriteLine("The first die is bigger.");
                 }
+                else if (die2.Roll > die1.Roll)
+                {
+                    Console.WriteLine("The second die is bigger.");
+                }
+                else if (die1.Roll == die2.Roll)
+                {
+                    Console.WriteLine("The dice are equal.");
+                }
+                
 
             }
 
