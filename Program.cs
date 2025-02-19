@@ -37,11 +37,12 @@ namespace Making_a_Die_Class_5._5
                 {
                     Console.WriteLine("The dice add up to 7.");
                 }
-                //check if it's even
-                else if (die1.Roll % 2 == 0 && die2.Roll % 2 == 0)
+                //check if it's even sum
+                else if ((die1.Roll + die2.Roll) % 2 == 0)
                 {
                     Console.WriteLine("The dice are even.");
                 }
+
                 //check if it's sequencential
                 else if (die1.Roll == die2.Roll + 1 || die2.Roll == die1.Roll + 1 || die1.Roll == die2.Roll - 1 || die2.Roll == die1.Roll - 1)
                 {
