@@ -8,22 +8,58 @@ namespace Making_a_Die_Class_5._5
         {
             Die die1, die2;
             die1 = new Die();
-
+            die2 = new Die();
             
-            die1.RollDie();
-            die1.DrawRoll();
-            Console.WriteLine(die1.Roll);
+            Console.WriteLine("Press space to roll the dice.");
 
-            //press space to roll again non stop over and over
             while (Console.ReadKey(true).Key == ConsoleKey.Spacebar)
             {
                 Console.Clear();
                 die1.RollDie();
+                die2.RollDie();
                 die1.DrawRoll();
                 Console.WriteLine(die1.Roll);
+                die2.DrawRoll();
+                Console.WriteLine(die2.Roll);
+
+                //check if the dice roll double
+                if (die1.Roll == die2.Roll)
+                {
+                    Console.WriteLine("The dice are Doubles.");
+                }
+                //check for snake eyes if both are 1
+                else if (die1.Roll == 1 && die2.Roll == 1)
+                {
+                    Console.WriteLine("The dice are snake eyes.");
+                }
+                //check for sum of 7
+                else if (die1.Roll + die2.Roll == 7)
+                {
+                    Console.WriteLine("The dice add up to 7.");
+                }
+                //check if it's even
+                else if (die1.Roll % 2 == 0 && die2.Roll % 2 == 0)
+                {
+                    Console.WriteLine("The dice are even.");
+                }
+                //check if it's sequencential
+                else if (die1.Roll == die2.Roll + 1 || die2.Roll == die1.Roll + 1 || die1.Roll == die2.Roll - 1 || die2.Roll == die1.Roll - 1)
+                {
+                    Console.WriteLine("The dice are sequencetial.");
+                }
+                else
+                {
+                    Console.WriteLine("The dice are not special. L bozo");
+                    Console.WriteLine("You can press space to roll again if you want.");
+                }
+
             }
-           
-           
+
+
+
+            Console.ReadLine();
+
+
         }
     }
 }
